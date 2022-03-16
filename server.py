@@ -4,6 +4,7 @@ Very simple HTTP server in python for logging requests
 Usage::
     ./server.py [<port>]
 """
+import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import logging
 
@@ -40,9 +41,4 @@ def run(server_class=HTTPServer, handler_class=S, port=8080):
     logging.info('Stopping httpd...\n')
 
 if __name__ == '__main__':
-    from sys import argv
-
-    if len(argv) == 2:
-        run(port=int(argv[1]))
-    else:
-        run()
+    run(port=os.environ['PORT'])
