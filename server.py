@@ -41,4 +41,4 @@ def run(server_class=HTTPServer, handler_class=S, port=8080):
     logging.info('Stopping httpd...\n')
 
 if __name__ == '__main__':
-    run(port=os.environ['PORT'])
+    run(port=int(os.environ['PORT']))
