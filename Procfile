@@ -1,1 +1,1 @@
-python main.py
+web: python3 setup.py
